@@ -1,0 +1,5 @@
+data1=read.csv(file.choose(),sep=",",header=T)
+names(data1)
+summary(data1)
+anv<-aov(formula = satindex~dept,data = data1)
+summary(anv)
