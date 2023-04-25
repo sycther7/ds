@@ -1,0 +1,90 @@
+1. Create a Database 
+--use book
+
+2. List down all databases
+--show dbs
+
+3. create collections with option before inserting the document
+-- db.createCollection("student")
+
+4. list down the created collections
+--show collections
+
+5. create the collections in mongodb on the fly
+--db.book.insert({name:Chaitanya"",age:30,address:"ABC"})
+
+6. show all the documents in the given collections
+--db.books.find()
+
+7. drop database in mongodb
+--db.dropDatabase()
+
+8. drop collections in mongodb
+--db.students.drop()
+
+9. insert multiple documents in collection
+--db.createCollections[({"name":"steve",rollno:10},{"name":"john",rollno:11})]
+
+10. print the output data in Json format
+--db.book1.find().pretty()
+
+11. Query document based on criteria
+--db.book1.find({"name":"john"}).pretty()
+
+12. greater than entity
+--db.book1.find("rollno":{$gt:10}).pretty()
+
+13. less than entity
+--db.book1.find("rollno":{$lt:10}).pretty()
+
+14. not equals criteria
+----db.book1.find("rollno":{$ne:10}).pretty()
+
+15. greater than equals critera
+--db.book1.find("rollno":{$gte:10}).pretty()
+
+16. less than equals criteria
+--db.book1.find("rollno":{$lte:10}).pretty()
+
+17. updating documents using update() method
+--db.update({"name":"john"},{$set:{"name":"wick"}})
+
+18. updating multiple documents with update() method
+--db.update({"name":"john"},{$set:{"name":"wick"}},{multi:true})
+
+19.updating documents using save() method
+db.student.save({"id":ObjectId("63c388f781767bo4dcf3c5"),"rollno":1011,"name":kit,"age":30})
+
+20. deleted documents using remove() method
+--db.remove({"rollno":1001})
+
+21. remove all documents
+--db.student.remove({})	
+
+22. mongodb projection 
+--db.student.insert(insert);
+
+23. limit the number of documents returned in response to a particular syntax
+--db.student.find({"rollno":{$gt:1}}).limit(1).pretty()
+
+24. skip the given number of documents returned in response to a particular syntax
+--db.student.find({"rollno":{$gt:1}}).limit(1).skip(1).pretty()
+
+25. Sorting documents using sort() method
+	a) descending
+	--db.student.find({},{"rollno":1,"_id":0}).sort({"rollno":-1})
+	b) ascending
+	--db.student.find({},{"rollno":1,"_id":0}).sort({"rollno":1})
+
+26. creating index in mongodb
+--db.student.createIndex({rollno:1})
+
+27. finding the indexes in a collecion 
+--db.student.getIndexes()
+
+28. Dropping a specific index of a collection
+-- db.studeng.dropIndex({rollno:1})
+
+29. Drop all the index of a collection 
+-- db.student.dropIndexes()
+
